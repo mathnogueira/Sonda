@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Domain", "Domain\Domain.shproj", "{7827BE2A-1768-4873-9F94-5C5FDAD22642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainUnitTests", "DomainUnitTests\DomainUnitTests.csproj", "{80D0CCED-9807-43B9-9C92-4261F4783D86}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Domain\Domain.projitems*{7827be2a-1768-4873-9f94-5c5fdad22642}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80D0CCED-9807-43B9-9C92-4261F4783D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D0CCED-9807-43B9-9C92-4261F4783D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D0CCED-9807-43B9-9C92-4261F4783D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D0CCED-9807-43B9-9C92-4261F4783D86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F942F58-C37A-4B77-998F-8664F3356D3B}
+	EndGlobalSection
+EndGlobal
