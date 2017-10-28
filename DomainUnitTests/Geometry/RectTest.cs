@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Domain.Geometry;
+﻿using Domain.Geometry;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DomainUnitTests.Geometry

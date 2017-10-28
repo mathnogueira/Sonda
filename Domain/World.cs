@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Domain.Geometry;
+﻿using Domain.Geometry;
 
 namespace Domain
 {
@@ -9,9 +6,9 @@ namespace Domain
     {
         private IContainer region;
 
-        public World(IContainer region)
+        public World(IContainer container)
         {
-            this.region = region;
+            this.region = container;
         }
 
         public bool Contains(Point2d point)
