@@ -9,10 +9,12 @@
     <Import_RootNamespace>Domain</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\SondaMovementException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\IContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Point2d.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Rect.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IWorld.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)World.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMoveable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObjectMover.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sonda.cs" />
   </ItemGroup>
 </Project>
