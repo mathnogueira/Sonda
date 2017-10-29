@@ -8,7 +8,7 @@ using Domain.Parser;
 using Domain.Solver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DomainUnitTests
+namespace DomainUnitTests.Solvers
 {
     [TestClass]
     public class ProblemSolverTest

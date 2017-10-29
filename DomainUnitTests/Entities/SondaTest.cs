@@ -3,7 +3,7 @@ using Domain.Entities;
 using Domain.Geometry;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DomainUnitTests
+namespace DomainUnitTests.Entities
 {
     [TestClass]
     public class SondaTest
