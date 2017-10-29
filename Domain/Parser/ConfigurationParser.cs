@@ -4,10 +4,11 @@ using Domain.Transformers;
 
 namespace Domain.Parser
 {
-    public class ConfigurationParser
+    public class ConfigurationParser : IConfigurationParser
     {
         public ProblemConfiguration Parse(string configuration)
         {
+            configuration = configuration.Replace("\r", "");
             string[] lines = configuration.Split('\n');
             var terrainDimensions = GetTerrainDimensions(lines);
             var sondas = GetSondasConfiguration(lines);

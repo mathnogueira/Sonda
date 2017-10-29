@@ -42,8 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\CommandLineInterface.cs" />
+    <Compile Include="Interfaces\Factories\UserInterfaceFactory.cs" />
+    <Compile Include="Interfaces\IUserInterface.cs" />
+    <Compile Include="Interfaces\Factories\IUserInterfaceFactory.cs" />
+    <Compile Include="Reporters\ErrorReporter.cs" />
+    <Compile Include="Reporters\IErrorReporter.cs" />
+    <Compile Include="Reporters\ISolutionReporter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporters\SolutionReporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

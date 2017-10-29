@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using Domain;
+using Domain.Exceptions;
 using Domain.Parser;
+using Domain.Solver;
+using Gui.Interfaces;
+using Gui.Interfaces.Factories;
+using Gui.Reporters;
 
 namespace Gui
 {
@@ -11,13 +15,20 @@ namespace Gui
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Digite o nome do arquivo com as definições do programa: ");
-            //string filename = Console.ReadLine();
-            string input = "5 6\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
-            ConfigurationParser parser = new ConfigurationParser();
-            ProblemConfiguration conf = parser.Parse(input);
+            var solutionReporter = new SolutionReporter();
+            var errorReporter = new ErrorReporter();
+            var parser = new ConfigurationParser();
+            var solverFactory = new ProblemSolverFactory();
 
-            return ;
+            var userInterfaceFactory = new UserInterfaceFactory();
+            var userInterface = userInterfaceFactory.Produce();
+
+            userInterface.SetSolutionReporter(solutionReporter);
+            userInterface.SetErrorReporter(errorReporter);
+            userInterface.SetConfigurationParser(parser);
+            userInterface.SetProblemSolverFactory(solverFactory);
+
+            userInterface.Start();
         }
     }
 }

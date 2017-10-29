@@ -5,6 +5,7 @@ using Domain;
 using Domain.Exceptions;
 using Domain.Geometry;
 using Domain.Parser;
+using Domain.Solver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DomainUnitTests

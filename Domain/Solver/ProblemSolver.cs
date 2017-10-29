@@ -8,10 +8,11 @@ using Domain.Parser;
 using System.Linq;
 using Domain.Transformers;
 using Domain.Geometry;
+using Domain.Exceptions;
 
-namespace Domain
+namespace Domain.Solver
 {
-    public class ProblemSolver
+    public class ProblemSolver : IProblemSolver
     {
 
         private ProblemConfiguration configuration;
@@ -61,9 +62,19 @@ namespace Domain
 
         private void ExecuteSondaCommands(IList<Sonda> sondas, IContainer container)
         {
+            int sondaNumber = 1;
             foreach (var sonda in sondas)
             {
-                sonda.ExecuteCommands(container);
+                try
+                {
+                    sonda.ExecuteCommands(container);
+                    ++sondaNumber;
+                }
+                catch (SondaMovementException ex)
+                {
+                    string exMessage = String.Format("Sonda #{0} went to an invalid position in Mars", sondaNumber);
+                    throw new SondaMovementException(exMessage, ex);
+                }
             }
         }
 

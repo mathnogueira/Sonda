@@ -23,12 +23,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\IMoveable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\IRotatable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ISonda.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solver\IProblemSolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser\IConfigurationParser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\ProblemConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\ConfigurationParser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\SondaConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Sonda.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ProblemSolver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solver\IProblemSolverFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solver\ProblemSolver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Solution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Solver\ProblemSolverFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Transformers\CardinalTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
