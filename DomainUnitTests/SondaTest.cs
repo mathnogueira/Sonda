@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.Entities;
 using Domain.Geometry;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

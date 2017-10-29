@@ -1,10 +1,10 @@
 ﻿using Domain.Geometry;
 
-namespace Domain
+namespace Domain.Entities
 {
     public interface IMoveable
     {
         void MoveTo(Point2d position);
-        void Rotate(int degrees);
+
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Transformers
+﻿namespace Domain.Transformers
 {
     public class CardinalTransformer
     {

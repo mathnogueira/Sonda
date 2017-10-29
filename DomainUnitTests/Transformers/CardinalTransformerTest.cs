@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Domain.Transformers;
+﻿using Domain.Transformers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DomainUnitTests.Transformers
@@ -11,7 +8,7 @@ namespace DomainUnitTests.Transformers
     {
 
         [TestMethod]
-        public void transformDirectionsIntoDegrees()
+        public void TransformDirectionsIntoDegrees()
         {
             int eastDegrees = CardinalTransformer.from('E').toDegrees();
             int northDegrees = CardinalTransformer.from('N').toDegrees();
@@ -25,7 +22,7 @@ namespace DomainUnitTests.Transformers
         }
 
         [TestMethod]
-        public void transformDegreesIntoDirection()
+        public void TransformDegreesIntoDirection()
         {
             char eastDirection = CardinalTransformer.from(0).toCardinalDirection();
             char northDirection = CardinalTransformer.from(90).toCardinalDirection();
