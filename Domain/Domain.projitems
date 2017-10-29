@@ -13,8 +13,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\IContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Point2d.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Rect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IMoveable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ObjectMover.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser\ProblemConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser\ConfigurationParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser\SondaConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sonda.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transformers\CardinalTransformer.cs" />
   </ItemGroup>
 </Project>

@@ -7,9 +7,8 @@ namespace DomainUnitTests
     [TestClass]
     public class SondaTest
     {
-        
         [TestMethod]
-        public void movedToRightPlace()
+        public void MovedToRightPlace()
         {
             var sonda = new Sonda();
             var position = new Point2d(3, 5);

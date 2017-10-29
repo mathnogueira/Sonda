@@ -3,3 +3,5 @@ Domain/bin/
 Domain/obj/
 DomainUnitTests/obj/
 DomainUnitTests/bin/
+Gui/bin/
+Gui/obj/

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Domain.Exceptions;
+﻿using Domain.Exceptions;
 using Domain.Geometry;
 
 namespace Domain
@@ -23,6 +20,11 @@ namespace Domain
             }
 
             item.MoveTo(position);
+        }
+
+        public void Rotate(IMoveable item, int ammount)
+        {
+            item.Rotate(ammount);
         }
     }
 }
