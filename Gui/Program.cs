@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Domain;
-using Domain.Exceptions;
-using Domain.Parser;
+﻿using Domain.Parser;
 using Domain.Solver;
-using Gui.Interfaces;
 using Gui.Interfaces.Factories;
 using Gui.Reporters;
 

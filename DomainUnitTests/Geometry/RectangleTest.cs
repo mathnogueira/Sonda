@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DomainUnitTests.Geometry
 {
     [TestClass]
-    public class RectTest
+    public class RectangleTest
     {
 
         [TestMethod]

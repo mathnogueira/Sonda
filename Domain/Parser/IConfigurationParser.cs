@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Parser
+﻿namespace Domain.Parser
 {
     public interface IConfigurationParser
     {

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain;
 using Domain.Exceptions;
 using Domain.Parser;
@@ -21,11 +18,21 @@ namespace Gui.Interfaces
 
         public void Start()
         {
-            string filename = AskForInputFile();
-            var configuration = LoadConfigurationFromFile(filename);
-            var solutions = SolveProblem(configuration);
-            ReportSolutions(solutions);
-            Finish();
+            try
+            {
+                string filename = AskForInputFile();
+                var configuration = LoadConfigurationFromFile(filename);
+                var solutions = SolveProblem(configuration);
+                ReportSolutions(solutions);
+            }
+            catch (Exception ex)
+            {
+                errorReporter.Report(ex);
+            }
+            finally
+            {
+                Finish();
+            }
         }
 
         private string AskForInputFile()
@@ -36,8 +43,15 @@ namespace Gui.Interfaces
 
         private ProblemConfiguration LoadConfigurationFromFile(string filename)
         {
-            string input = File.ReadAllText(filename);
-            return this.parser.Parse(input);
+            try
+            {
+                string input = File.ReadAllText(filename);
+                return this.parser.Parse(input);
+            } 
+            catch (IOException ex)
+            {
+                throw new SondaMovementException("File does not exist!");
+            }
         }
 
         private IList<Solution> SolveProblem(ProblemConfiguration configuration)

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Domain.Geometry;
+﻿using Domain.Geometry;
 using Domain.Transformers;
 
 namespace Domain

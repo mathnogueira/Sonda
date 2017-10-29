@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using Domain.Builders;
 using Domain.Commands;
 using Domain.Entities;
-using Domain.Parser;
-using System.Linq;
-using Domain.Transformers;
-using Domain.Geometry;
 using Domain.Exceptions;
+using Domain.Geometry;
+using Domain.Parser;
 
 namespace Domain.Solver
 {
