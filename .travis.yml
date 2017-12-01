@@ -1,9 +1,7 @@
 language: csharp
 solution: Sonda.sln
 mono:
-  - latest
-  - 3.12.0
-  - 3.10.0
+    - latest
 
 
 before_install:
@@ -11,5 +9,8 @@ before_install:
     - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
     - mono .nuget/nuget.exe
 install:
-  - mono .nuget/nuget.exe
-  - mono .nuget/nuget.exe restore Sonda.sln
+    - mono .nuget/nuget.exe
+    - mono .nuget/nuget.exe restore Sonda.sln
+ 
+script:
+    
