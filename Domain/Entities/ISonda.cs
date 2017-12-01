@@ -9,5 +9,6 @@ namespace Domain.Entities
     {
         Point2d Position { get; }
         int Rotation { get; }
+        void ExecuteCommands(IContainer container);
     }
 }

@@ -12,7 +12,6 @@ namespace Domain.Solver
 {
     public class ProblemSolver : IProblemSolver
     {
-
         private ProblemConfiguration configuration;
 
         public ProblemSolver(ProblemConfiguration configuration)
@@ -22,7 +21,7 @@ namespace Domain.Solver
 
         public IList<Solution> Solve()
         {
-            IList<Sonda> sondas = BuildSondas();
+            IList<ISonda> sondas = BuildSondas();
             IContainer container = BuildSolutionContainer();
             ExecuteSondaCommands(sondas, container);
             return sondas
@@ -30,9 +29,9 @@ namespace Domain.Solver
                 .ToList();
         }
 
-        private IList<Sonda> BuildSondas()
+        private IList<ISonda> BuildSondas()
         {
-            IList<Sonda> sondas = new List<Sonda>();
+            IList<ISonda> sondas = new List<ISonda>();
             var commandFactory = new CommandFactory();
             var sondaBuilder = new SondaBuilder(commandFactory);
 
@@ -58,21 +57,23 @@ namespace Domain.Solver
             return new Rectangle(0, 0, width, height);
         }
 
-        private void ExecuteSondaCommands(IList<Sonda> sondas, IContainer container)
+        private void ExecuteSondaCommands(IList<ISonda> sondas, IContainer container)
         {
-            int sondaNumber = 1;
             foreach (var sonda in sondas)
             {
-                try
-                {
-                    sonda.ExecuteCommands(container);
-                    ++sondaNumber;
-                }
-                catch (SondaMovementException ex)
-                {
-                    string exMessage = String.Format("Sonda #{0} went to an invalid position in Mars", sondaNumber);
-                    throw new SondaMovementException(exMessage, ex);
-                }
+                ExecuteCommands(sonda, container);
+            }
+        }
+
+        private void ExecuteCommands(ISonda sonda, IContainer container)
+        {
+            try
+            {
+                sonda.ExecuteCommands(container);
+            }
+            catch (SondaMovementException ex)
+            {
+                throw new SondaMovementException("Sonda went to an invalid position in Mars", ex);
             }
         }
 
