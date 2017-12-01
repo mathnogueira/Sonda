@@ -6,5 +6,5 @@ mono:
   - 3.10.0
 
 install:
-  - nuget update -self
+  - sudo nuget update -self
   - nuget restore Sonda.sln
