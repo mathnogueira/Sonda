@@ -8,7 +8,15 @@ namespace Domain.Commands
 {
     public class RotateLeftCommand : Command
     {
-        public void Execute(Sonda target, Container container)
+
+        private Rotatable target;
+
+        public void SetTarget(Target target)
+        {
+            this.target = target as Rotatable;
+        }
+
+        public void Execute()
         {
             int rotation = target.Rotation;
             rotation = (rotation + 90) % 360;

@@ -1,9 +1,11 @@
-﻿using Domain.Geometry;
+﻿using Domain.Commands;
+using Domain.Geometry;
 
 namespace Domain.Entities
 {
-    public interface Moveable
+    public interface Moveable : Rotatable, Target
     {
+        Point2d Position { get; }
         void MoveTo(Point2d position);
 
     }

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Domain.Commands;
 using Domain.Geometry;
+using Domain.Exceptions;
+using System;
 
 namespace Domain.Entities
 {
@@ -21,6 +23,18 @@ namespace Domain.Entities
             this.Rotation = rotation;
             this.Position = point;
             this.commands = commands;
+            if (commands != null)
+            {
+                SetCommandsTarget();
+            }
+        }
+
+        private void SetCommandsTarget()
+        {
+            foreach (var command in this.commands)
+            {
+                command.SetTarget(this);
+            }
         }
 
         public void MoveTo(Point2d position)
@@ -37,7 +51,18 @@ namespace Domain.Entities
         {
             foreach (var command in commands)
             {
-                command.Execute(this, container);
+                command.Execute();
+            }
+            ValidateSondaIsValidPosition(container);
+        }
+
+        private void ValidateSondaIsValidPosition(Container container)
+        {
+            if (!container.Contains(Position))
+            {
+                throw new SondaMovementException(
+                    String.Format("Invalid movement position ({0}, {1})", Position.X, Position.Y)
+                );
             }
         }
     }

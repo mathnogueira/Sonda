@@ -25,7 +25,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 0, null);
             var command = new MoveCommand();
 
-            command.Execute(sonda, terrain);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(1, sonda.Position.X);
             Assert.AreEqual(0, sonda.Position.Y);
@@ -37,7 +38,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 90, null);
             var command = new MoveCommand();
 
-            command.Execute(sonda, terrain);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(0, sonda.Position.X);
             Assert.AreEqual(1, sonda.Position.Y);
@@ -49,7 +51,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 180, null);
             var command = new MoveCommand();
 
-            command.Execute(sonda, terrain);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(-1, sonda.Position.X);
             Assert.AreEqual(0, sonda.Position.Y);
@@ -61,7 +64,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 270, null);
             var command = new MoveCommand();
 
-            command.Execute(sonda, terrain);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(0, sonda.Position.X);
             Assert.AreEqual(-1, sonda.Position.Y);

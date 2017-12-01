@@ -49,9 +49,14 @@ namespace DomainUnitTests.Builders
     class MockCommand : Command
     {
 
-        public void Execute(Sonda target, Container container)
+        public void Execute()
         {
             // Do nothing
+        }
+
+        public void SetTarget(Target target)
+        {
+
         }
     }
 }

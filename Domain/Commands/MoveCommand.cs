@@ -7,20 +7,21 @@ namespace Domain.Commands
 {
     public class MoveCommand : Command
     {
-        public void Execute(Sonda target, Container container)
+
+        private Moveable target;
+
+        public void SetTarget(Target target)
+        {
+            this.target = target as Moveable;
+        }
+
+        public void Execute()
         {
             var newPosition = GenerateNewPosition(target);
-            if (!container.Contains(newPosition))
-            {
-                throw new SondaMovementException(
-                    String.Format("Invalid movement position ({0}, {1})", newPosition.X, newPosition.Y)
-                );
-            }
-
             target.MoveTo(newPosition);
         }
 
-        private Point2d GenerateNewPosition(Sonda target)
+        private Point2d GenerateNewPosition(Moveable target)
         {
             int rotation = target.Rotation;
             double radians = rotation * Math.PI / 180;

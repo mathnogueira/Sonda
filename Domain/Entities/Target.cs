@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Commands
 {
-    interface Target
+    public interface Target
     {
     }
 }

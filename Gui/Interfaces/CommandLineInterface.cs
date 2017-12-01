@@ -48,7 +48,7 @@ namespace Gui.Interfaces
                 string input = File.ReadAllText(filename);
                 return this.parser.Parse(input);
             } 
-            catch (IOException ex)
+            catch (IOException)
             {
                 throw new SondaMovementException("File does not exist!");
             }

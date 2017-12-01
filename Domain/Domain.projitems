@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MoveCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RotateLeftCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\RotateRightCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\Target.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Target.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Exceptions\SondaMovementException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Container.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Geometry\Point2d.cs" />

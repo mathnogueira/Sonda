@@ -26,7 +26,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateLeftCommand();
 
-            command.Execute(sonda, null);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(90, sonda.Rotation);
         }

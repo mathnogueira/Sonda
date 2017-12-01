@@ -26,7 +26,8 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateRightCommand();
 
-            command.Execute(sonda, null);
+            command.SetTarget(sonda);
+            command.Execute();
 
             Assert.AreEqual(270, sonda.Rotation);
         }
@@ -37,9 +38,10 @@ namespace DomainUnitTests.Commands
             var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateRightCommand();
 
-            command.Execute(sonda, null);
-            command.Execute(sonda, null);
-            command.Execute(sonda, null);
+            command.SetTarget(sonda);
+            command.Execute();
+            command.Execute();
+            command.Execute();
 
             Assert.AreEqual(90, sonda.Rotation);
         }

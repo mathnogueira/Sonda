@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Domain.Exceptions;
+using Domain.Entities;
 
 namespace Domain.Commands
 {
