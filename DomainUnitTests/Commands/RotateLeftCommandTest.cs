@@ -23,7 +23,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void RotateLeftOnce()
         {
-            var sonda = new Sonda(this.origin, 0, null);
+            var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateLeftCommand();
 
             command.Execute(sonda, null);

@@ -23,7 +23,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void RotateRightOnce()
         {
-            var sonda = new Sonda(this.origin, 0, null);
+            var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateRightCommand();
 
             command.Execute(sonda, null);
@@ -34,7 +34,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void RotateRightThreeTimes()
         {
-            var sonda = new Sonda(this.origin, 0, null);
+            var sonda = new SondaImp(this.origin, 0, null);
             var command = new RotateRightCommand();
 
             command.Execute(sonda, null);

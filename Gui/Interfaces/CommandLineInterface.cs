@@ -9,12 +9,12 @@ using Gui.Reporters;
 
 namespace Gui.Interfaces
 {
-    public class CommandLineInterface : IUserInterface
+    public class CommandLineInterface : UserInterface
     {
-        private ISolutionReporter solutionReporter;
-        private IErrorReporter errorReporter;
-        private IConfigurationParser parser;
-        private IProblemSolverFactory problemSolverFactory;
+        private SolutionReporter solutionReporter;
+        private ErrorReporter errorReporter;
+        private ConfigurationParser parser;
+        private ProblemSolverFactory problemSolverFactory;
 
         public void Start()
         {
@@ -84,22 +84,22 @@ namespace Gui.Interfaces
             Console.ReadLine();
         }
 
-        public void SetSolutionReporter(ISolutionReporter reporter)
+        public void SetSolutionReporter(SolutionReporter reporter)
         {
             this.solutionReporter = reporter;
         }
 
-        public void SetErrorReporter(IErrorReporter reporter)
+        public void SetErrorReporter(ErrorReporter reporter)
         {
             this.errorReporter = reporter;
         }
 
-        public void SetConfigurationParser(IConfigurationParser parser)
+        public void SetConfigurationParser(ConfigurationParser parser)
         {
             this.parser = parser;
         }
 
-        public void SetProblemSolverFactory(IProblemSolverFactory factory)
+        public void SetProblemSolverFactory(ProblemSolverFactory factory)
         {
             this.problemSolverFactory = factory;
         }

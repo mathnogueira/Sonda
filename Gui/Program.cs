@@ -9,12 +9,12 @@ namespace Gui
     {
         static void Main(string[] args)
         {
-            var solutionReporter = new SolutionReporter();
-            var errorReporter = new ErrorReporter();
-            var parser = new ConfigurationParser();
-            var solverFactory = new ProblemSolverFactory();
+            var solutionReporter = new SolutionReporterImp();
+            var errorReporter = new ErrorReporterImp();
+            var parser = new ConfigurationParserImp();
+            var solverFactory = new ProblemSolverFactoryImp();
 
-            var userInterfaceFactory = new UserInterfaceFactory();
+            var userInterfaceFactory = new UserInterfaceFactoryImp();
             var userInterface = userInterfaceFactory.Produce();
 
             userInterface.SetSolutionReporter(solutionReporter);

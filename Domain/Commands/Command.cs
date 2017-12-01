@@ -3,8 +3,8 @@ using Domain.Geometry;
 
 namespace Domain.Commands
 {
-    public interface ICommand
+    public interface Command
     {
-        void Execute(ISonda target, IContainer container);
+        void Execute(Sonda target, Container container);
     }
 }

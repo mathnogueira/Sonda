@@ -11,7 +11,7 @@ namespace DomainUnitTests.Entities
         [TestMethod]
         public void MovedToRightPlace()
         {
-            var sonda = new Sonda();
+            var sonda = new SondaImp();
             var position = new Point2d(3, 5);
 
             sonda.MoveTo(position);

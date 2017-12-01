@@ -2,11 +2,8 @@
 
 namespace Domain.Solver
 {
-    public class ProblemSolverFactory : IProblemSolverFactory
+    public interface ProblemSolverFactory
     {
-        public IProblemSolver Produce(ProblemConfiguration configuration)
-        {
-            return new ProblemSolver(configuration);
-        }
+        ProblemSolver Produce(ProblemConfiguration configuration);
     }
 }

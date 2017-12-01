@@ -1,6 +1,6 @@
 ﻿namespace Domain.Geometry
 {
-    public interface IContainer
+    public interface Container
     {
         bool Contains(Point2d point);
     }

@@ -1,6 +1,6 @@
 ﻿namespace Domain.Geometry
 {
-    public class Rectangle : IContainer
+    public class Rectangle : Container
     {
         public int X { get; set; }
         public int Y { get; set; }

@@ -1,10 +1,7 @@
-﻿namespace Gui.Interfaces.Factories
+﻿namespace Gui.Interfaces
 {
-    public class UserInterfaceFactory : IUserInterfaceFactory
+    public interface UserInterfaceFactory
     {
-        public IUserInterface Produce()
-        {
-            return new CommandLineInterface();
-        }
+        UserInterface Produce();
     }
 }

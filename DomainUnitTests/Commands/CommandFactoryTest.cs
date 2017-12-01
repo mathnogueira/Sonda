@@ -8,12 +8,12 @@ namespace DomainUnitTests.Commands
     public class CommandFactoryTest
     {
 
-        private ICommandFactory factory;
+        private CommandFactory factory;
 
         [TestInitialize]
         public void Setup()
         {
-            this.factory = new CommandFactory();
+            this.factory = new CommandFactoryImp();
         }
 
         [TestMethod]

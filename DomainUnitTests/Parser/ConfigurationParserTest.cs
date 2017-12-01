@@ -11,7 +11,7 @@ namespace DomainUnitTests.Parser
         public void ParseTerrainDimensions()
         {
             string input = "5 6\n";
-            var parser = new ConfigurationParser();
+            var parser = new ConfigurationParserImp();
 
             var configuration = parser.Parse(input);
 
@@ -23,7 +23,7 @@ namespace DomainUnitTests.Parser
         public void ParseSondas()
         {
             string input = "5 6\n1 2 N\nLMLMLMLMM\n3 3 E\nMMRMMRMRRM";
-            var parser = new ConfigurationParser();
+            var parser = new ConfigurationParserImp();
 
             var configuration = parser.Parse(input);
 

@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public interface IMoveable
+    public interface Moveable
     {
         void MoveTo(Point2d position);
 

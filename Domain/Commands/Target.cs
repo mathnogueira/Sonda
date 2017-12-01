@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Domain.Commands
 {
-    public interface ICommandFactory
+    interface Target
     {
-        ICommand Produce(char command);
     }
 }

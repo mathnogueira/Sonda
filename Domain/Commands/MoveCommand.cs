@@ -5,9 +5,9 @@ using Domain.Geometry;
 
 namespace Domain.Commands
 {
-    public class MoveCommand : ICommand
+    public class MoveCommand : Command
     {
-        public void Execute(ISonda target, IContainer container)
+        public void Execute(Sonda target, Container container)
         {
             var newPosition = GenerateNewPosition(target);
             if (!container.Contains(newPosition))
@@ -20,7 +20,7 @@ namespace Domain.Commands
             target.MoveTo(newPosition);
         }
 
-        private Point2d GenerateNewPosition(ISonda target)
+        private Point2d GenerateNewPosition(Sonda target)
         {
             int rotation = target.Rotation;
             double radians = rotation * Math.PI / 180;

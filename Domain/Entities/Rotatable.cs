@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public interface IRotatable
+    public interface Rotatable
     {
         void RotateTo(int degrees);
     }

@@ -6,9 +6,9 @@ using Domain.Geometry;
 
 namespace Domain.Commands
 {
-    public class RotateRightCommand : ICommand
+    public class RotateRightCommand : Command
     {
-        public void Execute(ISonda target, IContainer container)
+        public void Execute(Sonda target, Container container)
         {
             int rotation = target.Rotation;
             rotation -= 90;

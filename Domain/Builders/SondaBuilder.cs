@@ -10,10 +10,10 @@ namespace Domain.Builders
 
         private Point2d startingPosition;
         private int startingRotation;
-        private IList<ICommand> commands;
-        private ICommandFactory commandFactory;
+        private IList<Command> commands;
+        private CommandFactory commandFactory;
 
-        public SondaBuilder(ICommandFactory commandFactory)
+        public SondaBuilder(CommandFactory commandFactory)
         {
             this.commandFactory = commandFactory;
         }
@@ -32,7 +32,7 @@ namespace Domain.Builders
 
         public SondaBuilder SetCommandList(IList<char> commandCodes)
         {
-            this.commands = new List<ICommand>();
+            this.commands = new List<Command>();
 
             foreach (var commandCode in commandCodes)
             {
@@ -43,9 +43,9 @@ namespace Domain.Builders
             return this;
         }
 
-        public Sonda Build()
+        public SondaImp Build()
         {
-            return new Sonda(startingPosition, startingRotation, commands);
+            return new SondaImp(startingPosition, startingRotation, commands);
         }
     }
 }

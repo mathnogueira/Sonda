@@ -38,18 +38,18 @@ namespace DomainUnitTests.Builders
         }
     }
 
-    class CommandFactoryMock : ICommandFactory
+    class CommandFactoryMock : CommandFactory
     {
-        public ICommand Produce(char command)
+        public Command Produce(char command)
         {
             return new MockCommand();
         }
     }
 
-    class MockCommand : ICommand
+    class MockCommand : Command
     {
 
-        public void Execute(ISonda target, IContainer container)
+        public void Execute(Sonda target, Container container)
         {
             // Do nothing
         }

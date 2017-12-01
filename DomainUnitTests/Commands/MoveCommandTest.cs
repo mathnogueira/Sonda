@@ -10,7 +10,7 @@ namespace DomainUnitTests.Commands
     {
 
         private Point2d origin;
-        private IContainer terrain;
+        private Container terrain;
 
         [TestInitialize]
         public void Setup()
@@ -22,7 +22,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ExecuteMovementToEast()
         {
-            var sonda = new Sonda(this.origin, 0, null);
+            var sonda = new SondaImp(this.origin, 0, null);
             var command = new MoveCommand();
 
             command.Execute(sonda, terrain);
@@ -34,7 +34,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ExecuteMovementToNorth()
         {
-            var sonda = new Sonda(this.origin, 90, null);
+            var sonda = new SondaImp(this.origin, 90, null);
             var command = new MoveCommand();
 
             command.Execute(sonda, terrain);
@@ -46,7 +46,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ExecuteMovementToWest()
         {
-            var sonda = new Sonda(this.origin, 180, null);
+            var sonda = new SondaImp(this.origin, 180, null);
             var command = new MoveCommand();
 
             command.Execute(sonda, terrain);
@@ -58,7 +58,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ExecuteMovementToSouth()
         {
-            var sonda = new Sonda(this.origin, 270, null);
+            var sonda = new SondaImp(this.origin, 270, null);
             var command = new MoveCommand();
 
             command.Execute(sonda, terrain);

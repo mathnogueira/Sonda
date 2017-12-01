@@ -25,7 +25,7 @@ namespace DomainUnitTests.Solvers
                     new List<char> { 'R', 'R', 'L', 'M' })
             };
             var configuration = new ProblemConfiguration(25, 30, sondas);
-            var solver = new ProblemSolver(configuration);
+            var solver = new ProblemSolverImp(configuration);
 
             var solutions = solver.Solve();
 
@@ -45,7 +45,7 @@ namespace DomainUnitTests.Solvers
                     new List<char> { 'R', 'R', 'M',  'R', 'M' })
             };
             var configuration = new ProblemConfiguration(25, 30, sondas);
-            var solver = new ProblemSolver(configuration);
+            var solver = new ProblemSolverImp(configuration);
 
             Assert.ThrowsException<SondaMovementException>(() =>
             {
