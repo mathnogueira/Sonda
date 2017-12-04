@@ -15,14 +15,18 @@ namespace Gui.Reporters
 
         private void DisplayErrorMessage(string msg)
         {
-            string errorMessage = String.Format("Error: {0}", msg);
-            Console.WriteLine(errorMessage);
+            DisplayMessage("Error", msg);
         }
 
         private void DisplayDetailMessage(string msg)
         {
-            string detailMessage = String.Format("Detail: {0}", msg);
-            Console.WriteLine(detailMessage);
+            DisplayMessage("Detail", msg);
+        }
+
+        private void DisplayMessage(string prefix, string msg)
+        {
+            string formattedMessage = String.Format("{0}: {1}", prefix, msg);
+            Console.WriteLine(formattedMessage);
         }
     }
 }
