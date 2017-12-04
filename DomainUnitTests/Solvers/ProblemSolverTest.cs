@@ -7,12 +7,21 @@ using Domain.Geometry;
 using Domain.Parser;
 using Domain.Solver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Domain.Commands;
 
 namespace DomainUnitTests.Solvers
 {
     [TestClass]
     public class ProblemSolverTest
     {
+
+        private CommandFactory commandFactory;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            commandFactory = new CommandFactoryImp();
+        }
 
         [TestMethod]
         public void ValidSolution()
@@ -25,7 +34,7 @@ namespace DomainUnitTests.Solvers
                     new List<char> { 'R', 'R', 'L', 'M' })
             };
             var configuration = new ProblemConfiguration(25, 30, sondas);
-            var solver = new ProblemSolverImp(configuration);
+            var solver = new ProblemSolverImp(configuration, commandFactory);
 
             var solutions = solver.Solve();
 
@@ -45,9 +54,9 @@ namespace DomainUnitTests.Solvers
                     new List<char> { 'R', 'R', 'M',  'R', 'M' })
             };
             var configuration = new ProblemConfiguration(25, 30, sondas);
-            var solver = new ProblemSolverImp(configuration);
+            var solver = new ProblemSolverImp(configuration, commandFactory);
 
-            Assert.ThrowsException<SondaMovementException>(() =>
+            Assert.ThrowsException<SondaException>(() =>
             {
                 solver.Solve();
             });

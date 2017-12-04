@@ -17,7 +17,7 @@ namespace DomainUnitTests.Builders
         public void Setup()
         {
             var factory = new CommandFactoryMock();
-            this.builder = new SondaBuilder(factory);
+            builder = new SondaBuilder(factory);
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace DomainUnitTests.Builders
             int rotation = 180;
             var commands = new List<char> { 'A', 'B', 'C' };
 
-            var sonda = this.builder
+            var sonda = builder
                 .SetPosition(position)
                 .SetRotation(rotation)
                 .SetCommandList(commands)

@@ -11,6 +11,3 @@ before_install:
 install:
     - mono .nuget/nuget.exe
     - mono .nuget/nuget.exe restore Sonda.sln
- 
-script:
-    

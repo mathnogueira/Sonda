@@ -40,7 +40,7 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ProduceInvalidCommand()
         {
-            Assert.ThrowsException<SondaMovementException>(() =>
+            Assert.ThrowsException<SondaException>(() =>
             {
                 factory.Produce('Q');
             });

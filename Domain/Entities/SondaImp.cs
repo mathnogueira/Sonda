@@ -60,7 +60,7 @@ namespace Domain.Entities
         {
             if (!container.Contains(Position))
             {
-                throw new SondaMovementException(
+                throw new SondaException(
                     String.Format("Invalid movement position ({0}, {1})", Position.X, Position.Y)
                 );
             }

@@ -13,18 +13,19 @@ namespace DomainUnitTests.Commands
     {
 
         private Point2d origin;
+        private Command command;
 
         [TestInitialize]
         public void Setup()
         {
-            this.origin = new Point2d(0, 0);
+            origin = new Point2d(0, 0);
+            command = new RotateRightCommand();
         }
 
         [TestMethod]
         public void RotateRightOnce()
         {
-            var sonda = new SondaImp(this.origin, 0, null);
-            var command = new RotateRightCommand();
+            var sonda = new SondaImp(origin, 0, null);
 
             command.SetTarget(sonda);
             command.Execute();
@@ -36,7 +37,6 @@ namespace DomainUnitTests.Commands
         public void RotateRightThreeTimes()
         {
             var sonda = new SondaImp(this.origin, 0, null);
-            var command = new RotateRightCommand();
 
             command.SetTarget(sonda);
             command.Execute();

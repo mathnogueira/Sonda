@@ -19,7 +19,7 @@ namespace Domain.Commands
                 case 'M':
                     return new MoveCommand();
                 default:
-                    throw new SondaMovementException("Command '"+ command +"' not allowed");
+                    throw new SondaException("Command '"+ command +"' not allowed");
             }
         }
     }

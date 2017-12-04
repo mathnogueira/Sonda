@@ -6,6 +6,7 @@ using Domain.Exceptions;
 using Domain.Parser;
 using Domain.Solver;
 using Gui.Reporters;
+using Domain.Commands;
 
 namespace Gui.Interfaces
 {
@@ -50,19 +51,20 @@ namespace Gui.Interfaces
             } 
             catch (IOException)
             {
-                throw new SondaMovementException("File does not exist!");
+                throw new SondaException("File does not exist!");
             }
         }
 
         private IList<Solution> SolveProblem(ProblemConfiguration configuration)
         {
-            IList<Solution> solutions = new List<Solution>();
+            IList<Solution> solutions = Array.Empty<Solution>();
+            var commandFactory = new CommandFactoryImp();
             try
             {
-                var solver = this.problemSolverFactory.Produce(configuration);
+                var solver = this.problemSolverFactory.Produce(configuration, commandFactory);
                 solutions = solver.Solve();
             }
-            catch (SondaMovementException ex)
+            catch (SondaException ex)
             {
                 this.errorReporter.Report(ex);
             }

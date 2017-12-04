@@ -13,10 +13,12 @@ namespace Domain.Solver
     public class ProblemSolverImp : ProblemSolver
     {
         private ProblemConfiguration configuration;
+        private CommandFactory commandFactory;
 
-        public ProblemSolverImp(ProblemConfiguration configuration)
+        public ProblemSolverImp(ProblemConfiguration configuration, CommandFactory commandFactory)
         {
             this.configuration = configuration;
+            this.commandFactory = commandFactory;
         }
 
         public IList<Solution> Solve()
@@ -31,22 +33,15 @@ namespace Domain.Solver
 
         private IList<Sonda> BuildSondas()
         {
-            IList<Sonda> sondas = new List<Sonda>();
-            var commandFactory = new CommandFactoryImp();
             var sondaBuilder = new SondaBuilder(commandFactory);
 
-            foreach (var sondaConfig in configuration.Sondas)
-            {
-                var sonda = sondaBuilder
+            return configuration.Sondas
+                .Select(sondaConfig => sondaBuilder
                     .SetPosition(sondaConfig.StartingPoint)
                     .SetRotation(sondaConfig.StartingRotation)
                     .SetCommandList(sondaConfig.Commands)
-                    .Build();
-
-                sondas.Add(sonda);
-            }
-
-            return sondas;
+                    .Build())
+                .ToList();
         }
 
         private Container BuildSolutionContainer()
@@ -71,9 +66,9 @@ namespace Domain.Solver
             {
                 sonda.ExecuteCommands(container);
             }
-            catch (SondaMovementException ex)
+            catch (SondaException ex)
             {
-                throw new SondaMovementException("Sonda went to an invalid position in Mars", ex);
+                throw new SondaException("Sonda went to an invalid position in Mars", ex);
             }
         }
 

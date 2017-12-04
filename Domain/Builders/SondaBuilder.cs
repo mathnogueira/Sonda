@@ -43,7 +43,7 @@ namespace Domain.Builders
             return this;
         }
 
-        public SondaImp Build()
+        public Sonda Build()
         {
             return new SondaImp(startingPosition, startingRotation, commands);
         }

@@ -11,19 +11,20 @@ namespace DomainUnitTests.Commands
 
         private Point2d origin;
         private Container terrain;
+        private Command command;
 
         [TestInitialize]
         public void Setup()
         {
-            this.origin = new Point2d(0, 0);
-            this.terrain = new Rectangle(-15, -15, 20, 20);
+            origin = new Point2d(0, 0);
+            terrain = new Rectangle(-15, -15, 20, 20);
+            command = new MoveCommand();
         }
 
         [TestMethod]
         public void ExecuteMovementToEast()
         {
             var sonda = new SondaImp(this.origin, 0, null);
-            var command = new MoveCommand();
 
             command.SetTarget(sonda);
             command.Execute();
@@ -35,40 +36,37 @@ namespace DomainUnitTests.Commands
         [TestMethod]
         public void ExecuteMovementToNorth()
         {
-            var sonda = new SondaImp(this.origin, 90, null);
-            var command = new MoveCommand();
-
-            command.SetTarget(sonda);
-            command.Execute();
-
-            Assert.AreEqual(0, sonda.Position.X);
-            Assert.AreEqual(1, sonda.Position.Y);
+            var sonda = new SondaImp(origin, 90, null);
+            ExecuteOn(sonda);
+            AssertPosition(new Point2d(0, 1), sonda);
         }
 
         [TestMethod]
         public void ExecuteMovementToWest()
         {
-            var sonda = new SondaImp(this.origin, 180, null);
-            var command = new MoveCommand();
-
-            command.SetTarget(sonda);
-            command.Execute();
-
-            Assert.AreEqual(-1, sonda.Position.X);
-            Assert.AreEqual(0, sonda.Position.Y);
+            var sonda = new SondaImp(origin, 180, null);
+            ExecuteOn(sonda);
+            AssertPosition(new Point2d(-1, 0), sonda);
         }
 
         [TestMethod]
         public void ExecuteMovementToSouth()
         {
-            var sonda = new SondaImp(this.origin, 270, null);
-            var command = new MoveCommand();
+            var sonda = new SondaImp(origin, 270, null);
+            ExecuteOn(sonda);
+            AssertPosition(new Point2d(0, -1), sonda);
+        }
 
-            command.SetTarget(sonda);
+        private void ExecuteOn(Target target)
+        {
+            command.SetTarget(target);
             command.Execute();
+        }
 
-            Assert.AreEqual(0, sonda.Position.X);
-            Assert.AreEqual(-1, sonda.Position.Y);
+        private void AssertPosition(Point2d point, Sonda sonda)
+        {
+            Assert.AreEqual(point.X, sonda.Position.X);
+            Assert.AreEqual(point.Y, sonda.Position.Y);
         }
     }
 }
